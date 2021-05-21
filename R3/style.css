@@ -34,7 +34,7 @@ body {
     flex-wrap: wrap;
   }
   iframe {
-    width: 400px;
+    width: 100%;
   }
   .card-body {
     width: 65%;
@@ -42,3 +42,5 @@ body {
     padding-left: 0;
   }
 }
+
+
