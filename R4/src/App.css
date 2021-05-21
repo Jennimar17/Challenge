@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+body {
+  background-image: url(./img/background.jpg);
+  background-size: cover;
+  background-color: #1a2224;
+  font-family: "Abel", sans-serif;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-container {
+  width: 90vw;
+  overflow-x: auto;
+  border-radius: 9px;
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.125);
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+  border: 0px rgba(255, 255, 255, 0.4) solid;
+  border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
+  border-right: 0px rgba(40, 40, 40, 0.35) solid;
+}
+
+th,
+td {
+  width: 250px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
