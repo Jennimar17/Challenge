@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;700&display=swap");
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #e0e0e0;
 }
 
 .card-container {
   display: flex;
   align-items: center;
   padding: 30px;
+  margin: 50px;
   box-sizing: border-box;
-
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  
 }
 
 .card-body {
@@ -29,7 +34,7 @@ body {
     flex-wrap: wrap;
   }
   iframe {
-    width: 400px;  
+    width: 400px;
   }
   .card-body {
     width: 65%;
