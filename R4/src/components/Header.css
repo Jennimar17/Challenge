@@ -6,6 +6,18 @@
     
 }
 
-label {
+
+
+.alert {
+    margin-right: 15px;
+    color: red;
+    
+}
+
+.button-style {
+    background-color: #1c202049;
+    border-radius: 5px;
     margin-left: 15px;
+    color: #fff;
+    border: 1px solid #fff;
 }
