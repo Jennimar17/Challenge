@@ -1,35 +1,59 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Header from "./components/Header";
+import Api from './components/Api';
+
 
 import "./App.css";
+import SearchBar from "./components/SearchBar";
 
 function App() {
+
+   //statee
+const [busqueda, guardarBusqueda] = useState({
+  ciudad: ''
+});
+
+const [consultar, guardarConsulta] = useState(false);
+
+const [resultado, guardarResultado] = useState({});
+
+const { ciudad } = busqueda;
+
+useEffect(() => {
+  const consultarApi = async () => {
+
+    if(consultar) {
+      const url = `http://api.weatherstack.com/current?access_key=607566807da860584a644586519b2dc3&units=m&query=${ciudad}`;
+      const respuesta = await fetch(url);
+      const resultado = await respuesta.json();
+      
+      guardarResultado(resultado);
+    }
+
+  }
+  consultarApi();
+},[consultar]);
+  
   return (
     <Fragment>
       <Header titulo="Weather-Tabla" />
-      <table className="table-container">
+      <SearchBar
+        busqueda={busqueda}
+        guardarBusqueda={guardarBusqueda} 
+        guardarConsulta={guardarConsulta}     
+      />
+      <table className="title-table__style">
         <tr>
           <th></th>
           <th>Ciudad</th>
-          <th>Pais</th>
+          <th>País</th>
           <th>Temp. Actual</th>
-          <th>Max.</th>
-          <th>Min.</th>
-        </tr>
-        <tr>
-          <td>
-            <img src="./img/trending/trending_up_white_24dp.svg" alt="up" />
-          </td>
-          <td>
-            <img class="crypto-icons" src="./img/cryptos/BTC.svg" alt="" />
-            Bitcoin
-          </td>
-          <td>BTC</td>
-          <td>$123,456,789</td>
-          <td>$12,345</td>
-          <td>$1,234</td>
+          <th>Tiempo</th>
+          <th>Humidity</th>
         </tr>
       </table>
+
+    <Api resultado={resultado} />
     </Fragment>
   );
 }
