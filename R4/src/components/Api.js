@@ -1,4 +1,5 @@
 import React from 'react';
+import './Api.css';
 
 const Api = ({ resultado }) => {
 
