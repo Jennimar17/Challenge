@@ -23,7 +23,7 @@ useEffect(() => {
   const consultarApi = async () => {
 
     if(consultar) {
-      const url = `http://api.weatherstack.com/current?access_key=c6baea9568cf784efb13bbb7d7ff83a1&units=m&query=${ciudad}`;
+      const url = `http://api.weatherstack.com/current?access_key=63b70d87292fe05d6282574056a5c865&units=m&query=${ciudad}`;
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
       
